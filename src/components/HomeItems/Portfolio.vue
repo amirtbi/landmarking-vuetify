@@ -1,6 +1,6 @@
 <template>
   <v-container class="my-15">
-    <v-row justify="center">
+    <v-row justify="center" align="center">
       <v-col lg="12" class="text-center">
         <h5 class="mb-2 text-center text-h4">Portfolio</h5>
         <p class="text-body-1 text-center">
