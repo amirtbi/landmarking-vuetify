@@ -41,9 +41,27 @@
             </v-form>
           </v-card-text>
         </v-col>
-        <v-col class="bg-grey-lighten-5" lg="6">
-          <div class="mt-10">
-            <v-divider></v-divider>
+
+        <v-divider></v-divider>
+
+        <v-col
+          lg="6"
+          md="6"
+          cols="12"
+          class="d-flex justify-center justify-md-start align-center flex-row bg-grey-lighten-5"
+        >
+          <div class="text-grey-darken-2">
+            {{ new Date().getFullYear() }} —
+            <strong>Vuetify App</strong>
+          </div>
+        </v-col>
+        <v-col
+          cols="12"
+          md="6"
+          class="d-flex flex-row align-center justify-center justify-md-end bg-grey-lighten-5"
+          lg="6"
+        >
+          <div>
             <p class="text-grey">
               @ Copyright Amir Torabi. All rights reserved
 
@@ -52,16 +70,6 @@
               <v-spacer />
               <strong>Vuetify App designed by Amir.Torabi</strong>
             </p>
-          </div>
-        </v-col>
-        <v-divider></v-divider>
-        <v-col
-          lg="12 "
-          class="d-flex justify-center align-center flex-row bg-green-darken-1"
-        >
-          <div class="text-white">
-            {{ new Date().getFullYear() }} —
-            <strong>Vuetify App</strong>
           </div>
         </v-col>
       </v-row>
