@@ -5,14 +5,17 @@
     <v-main class="mt-10">
       <router-view></router-view>
     </v-main>
+    <the-footer></the-footer>
   </v-app>
 </template>
 
 <script>
 import TheHeader from "./components/layouts/TheHeader.vue";
+import TheFooter from "./components/layouts/TheFooter.vue";
 export default {
   components: {
     TheHeader,
+    TheFooter,
   },
   data() {
     return {};

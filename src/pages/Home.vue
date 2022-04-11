@@ -4,7 +4,7 @@
     <v-row class="no-gutters" align="center" justify="center">
       <v-col class="text-center" cols="12" sm="12" lg="6">
         <h1 class="font-weight-black text-h6 text-sm-h5 text-lg-h2">
-          Welcome to our Vuetify App
+          Welcome to My Vuetify App
         </h1>
         <p class="text-body-2 text-sm-body-1 text-justify my-5 description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dicta

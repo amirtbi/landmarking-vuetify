@@ -8,9 +8,16 @@
       </p>
     </div>
     <!-- Image galleries -->
-    <div class="d-flex flex-row align-center mx-5 justify-center">
+    <div
+      class="d-flex flex-md-row flex-column align-center mx-md-5 justify-center"
+    >
       <!-- IMAGE CONTAINE -->
-      <div style="width: 100%" v-for="(image, index) in images" :key="index">
+      <div
+        style="width: 100%"
+        class="my-5"
+        v-for="(image, index) in images"
+        :key="index"
+      >
         <v-hover v-slot="{ isHovering, props }">
           <v-card
             :elevation="isHovering ? 12 : 2"

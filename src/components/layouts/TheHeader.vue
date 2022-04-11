@@ -7,9 +7,16 @@
     elevation="6"
     elevation-on-scroll
   >
-    <v-app-bar-title> Vuetify App </v-app-bar-title>
+    <!-- Mobile navigation button -->
+    <v-app-bar-nav-icon
+      v-if="mobileScreen"
+      variant="text"
+      @click.stop="drawer = !drawer"
+    ></v-app-bar-nav-icon>
+    <v-app-bar-title> Amir.Torabi </v-app-bar-title>
     <v-spacer></v-spacer>
-    <v-list class="d-flex flex-row align-center">
+    <!-- Large screens -->
+    <v-list v-if="!mobileScreen" class="d-flex flex-row align-center">
       <v-list-item
         link
         v-for="item in items"
@@ -19,17 +26,35 @@
         <v-list-item-title v-text="item.title"></v-list-item-title>
       </v-list-item>
     </v-list>
+
     <v-btn text>
       <v-icon>mdi-magnify</v-icon>
     </v-btn>
     <v-btn outlined color="success"> Get started </v-btn>
   </v-app-bar>
+  <!-- mobile screens -->
+  <v-navigation-drawer v-model="drawer" temporary>
+    <v-list class="d-flex flex-column align-center">
+      <v-list-item
+        link
+        v-for="item in items"
+        :to="item.router"
+        :key="item.title"
+      >
+        <v-list-item-title v-text="item.title"></v-list-item-title>
+      </v-list-item>
+    </v-list>
+  </v-navigation-drawer>
 </template>
 
 <script>
 export default {
   data() {
     return {
+      drawer: false,
+      windowWidth: window.innerWidth,
+      mobileScreen: false,
+
       items: [
         { title: "Home", router: "/home" },
         { title: "About", router: "/about" },
@@ -39,6 +64,28 @@ export default {
         { title: "Contact", router: "/contact" },
       ],
     };
+  },
+  methods: {
+    trackWindowChange() {
+      this.windowWidth = window.innerWidth;
+    },
+  },
+  computed: {
+    width() {
+      return this.windowWidth;
+    },
+  },
+  watch: {
+    width(newValue) {
+      if (newValue <= "950") {
+        this.mobileScreen = true;
+      } else {
+        this.mobileScreen = false;
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener("resize", this.trackWindowChange);
   },
 };
 </script>
