@@ -31,14 +31,23 @@
   </v-container>
   <the-about></the-about>
   <the-portfolio></the-portfolio>
+  <the-project></the-project>
+  <the-gallery></the-gallery>
+  <the-contact></the-contact>
 </template>
 <script>
 import TheAbout from "../components/HomeItems/About.vue";
 import ThePortfolio from "../components/HomeItems/Portfolio.vue";
+import TheProject from "../components/HomeItems/Projects.vue";
+import TheGallery from "../components/HomeItems/Gallery.vue";
+import TheContact from "../components/HomeItems/Contactus.vue";
 export default {
   components: {
     TheAbout,
     ThePortfolio,
+    TheProject,
+    TheGallery,
+    TheContact,
   },
 };
 </script>

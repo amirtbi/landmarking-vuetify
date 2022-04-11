@@ -20,6 +20,7 @@
           >
             <v-img
               :src="'../../src/assets/images/' + image.src + '.jpg'"
+              lazy-src="https://picsum.photos/id/11/100/60"
               height="150px"
               aspect-ratio="2"
               cover

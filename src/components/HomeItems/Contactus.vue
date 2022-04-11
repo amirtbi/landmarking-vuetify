@@ -1,5 +1,5 @@
 <template>
-  <v-conatiner class="mt-10">
+  <v-container class="my-10">
     <v-row justify="center" align="center">
       <v-col lg="12">
         <h5 class="mb-2 text-center text-h4">Contact us</h5>
@@ -40,10 +40,11 @@
             required
           ></v-text-field>
           <v-textarea
-            v-model.trim="message"
+            v-model="message"
             :rules="messageRules"
             @input="submit"
             label="Message"
+            :counter="200"
           >
           </v-textarea>
 
@@ -58,7 +59,7 @@
         </v-form>
       </v-col>
     </v-row>
-  </v-conatiner>
+  </v-container>
 </template>
 
 <script>
@@ -81,6 +82,7 @@ export default {
         (v) =>
           (v !== "" && v.length >= 20) ||
           "Minimum length 50 characters is needed",
+        (v) => v.length <= 200 || "Maximum length is 200 characters",
       ],
     };
   },

@@ -8,7 +8,9 @@
     </div>
 
     <!-- Projects -->
-    <div class="d-flex flex-row align-center justify-center">
+    <div
+      class="d-flex flex-column flex-md-row align-center align-sm-stretch justify-center flex-wrap align-content-stretch"
+    >
       <!-- <div
         class="d-flex flex-column"
         v-for="project in projects"
